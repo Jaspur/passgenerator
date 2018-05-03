@@ -192,7 +192,7 @@ $pkpass = $pass->create();
 Now, a valid ticket is already in place. Apple recommends a MIME type to serve it to its devices so something like the following should do:
 
 ```php
-return new Response($pkpass, 200, [
+return new \Illuminate\Http\Response($pkpass, 200, [
     'Content-Transfer-Encoding' => 'binary',
     'Content-Description' => 'File Transfer',
     'Content-Disposition' => 'attachment; filename="pass.pkpass"',
